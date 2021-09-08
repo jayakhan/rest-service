@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     if: "contains(github.event.head_commit.message, 'to deploy')"
     steps:
-      - uses: google-github-actions/setup-gcloud@master
+      - uses: actions/checkout@v2
 
-
+      
       # Setup gcloud CLI
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
