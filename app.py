@@ -1,19 +1,18 @@
 import logging
-from flask.templating import render_template
 import requests
-from flask import json, jsonify
-from __init__ import app
-from urllib.request import urlopen
 import xmltodict
+from flask import Flask
+
+app = Flask(__name__)
 
 @app.route('/', methods = ['GET'])
 def get_research_materials():
   uri = 'http://export.arxiv.org/api/query?search_query=all:electron&start=0&max_results=10'
   try:
-    uResponse = xmltodict.parse(requests.get(uri).text)
+    json = xmltodict.parse(requests.get(uri).text)
   except requests.ConnectionError:
     return "Connection Error"  
-  return uResponse
+  return json
 
 @app.errorhandler(500)
 def server_error(e):
