@@ -8,6 +8,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 var/
+keys.json
 # Other files and folders
 .settings/
 
