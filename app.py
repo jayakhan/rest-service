@@ -1,13 +1,14 @@
 import logging
 import requests
 import xmltodict
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
 @app.route('/', methods = ['GET'])
 def get_research_materials():
-  uri = 'http://export.arxiv.org/api/query?search_query=all:electron&start=0&max_results=10'
+  search_word = request.args.get('search_query')
+  uri = 'http://export.arxiv.org/api/query?search_query=all:{}&start=0&max_results=10'.format(search_word)
   try:
     json = xmltodict.parse(requests.get(uri).text)
   except requests.ConnectionError:
@@ -23,4 +24,3 @@ if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the
     # application on Google App Engine. See entrypoint in app.yaml.
     app.run(host='127.0.0.1', port=8080, debug=True)
-# [END gae_flex_quickstart]
