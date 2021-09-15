@@ -18,10 +18,10 @@ jobs:
     steps:
       id: gcloud
       uses: google-github-actions/deploy-cloudrun@master
-        with:
-        version: "290.0.1"
-        service_account_key: ${{ secrets.GCP_SA_KEY_JSON }}
-        project_id: ${{ secrets.GCP_PROJECT_ID }}
+          with:
+          version: "290.0.1"
+          service_account_key: ${{ secrets.GCP_SA_KEY_JSON }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
 
       # Build and push image to Google Container Registry
       - name: Build
