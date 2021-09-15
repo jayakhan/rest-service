@@ -16,9 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     if: "contains(github.event.head_commit.message, 'to deploy')"
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: ad-m/github-push-action@master
+      with:
+        branch: develop
+        github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
       # Setup gcloud CLI
