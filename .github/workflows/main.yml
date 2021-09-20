@@ -26,7 +26,6 @@ jobs:
 
       # Test cases
       - name: GitHub Action for pytest
-        uses: google-github-actions/setup-gcloud@master
         with:
           args: pytest -h
 
