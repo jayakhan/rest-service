@@ -27,8 +27,7 @@ jobs:
       # Test cases
       - name: Test with pytest
       - uses: actions/checkout@v2
-        run: |
-          pytest
+        run: pytest
 
       # Setup gcloud CLI
       - name: Setup gcloud CLI
