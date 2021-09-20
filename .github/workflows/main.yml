@@ -26,7 +26,7 @@ jobs:
 
       # Test cases
       - name: Test with pytest
-      run: pytest
+        run: pytest
 
       # Setup gcloud CLI
       - name: Setup gcloud CLI
