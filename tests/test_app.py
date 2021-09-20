@@ -2,7 +2,7 @@ import json
 import pytest
 import sys
 sys.path.append('/Users/zayakhan/Dev/content-extract-v1')
-from app import app as flask_app
+from main import app as flask_app
 
 @pytest.fixture
 def app():
