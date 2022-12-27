@@ -1,4 +1,4 @@
-# Depoloy a Flask API in Google Kubernetes Engine
+# Deploy a Flask API in Google Kubernetes Engine
 
 ## Steps required:
 1. Create a requirements.txt for list of dependencies
